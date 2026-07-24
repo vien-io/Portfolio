@@ -1,10 +1,11 @@
 import { Canvas } from "@react-three/fiber";
 import { Lights } from "./Lights";
-import { LiquidBlob } from "./LiquidBlob";
 import { CameraRig } from "./CameraRig";
 import { Particles } from "./Particles";
-import { OrbitRing } from "./OrbitRing";
 import Planet from "./Planet";
+// import { OrbitRing } from "./OrbitRing";
+// import { LiquidBlob } from "./LiquidBlob";
+
 
 export const HeroScene = () => {
   return (
