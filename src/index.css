@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "@fontsource/anton/400.css";
+
+@theme {
+  --font-anton: "Anton", sans-serif;
+  --font-thunder: "Thunder", sans-serif;
+  --font-thunder-bold: "ThunderBold", sans-serif;
+  --font-thunder-black: "ThunderBlack", sans-serif;
+}
+
+@font-face {
+  font-family: "Thunder";
+  src: url("/fonts/Thunder-BoldLC.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ThunderBold";
+  src: url("/fonts/Thunder-ExtraBoldLC.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ThunderBlack";
+  src: url("/fonts/Thunder-BlackLC.otf") format("opentype");
+  font-display: swap;
+}
+
