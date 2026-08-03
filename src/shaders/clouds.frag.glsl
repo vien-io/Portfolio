@@ -1,6 +1,10 @@
 uniform float uTime;
 
 varying vec3 vPosition;
+varying vec3 vWorldPosition;
+varying vec3 vWorldNormal;
+
+uniform vec3 uSunDirection;
 
 float hash(vec3 p)
 {
@@ -67,7 +71,24 @@ void main()
     float clouds = fbm(p * 3.0);
 
     // Only keep the brightest parts
-    clouds = smoothstep(0.62,0.75,clouds);
+    clouds = smoothstep(0.50, 0.68, clouds);
+    
+    vec3 lightDir = normalize(uSunDirection);
 
-    gl_FragColor = vec4(vec3(1.0), clouds * 0.35);
+    float sun = max(dot(normalize(vWorldNormal), lightDir), 0.0);
+
+    // Ambient + diffuse
+    float lighting = 0.15 + sun * 0.85;
+
+    float alpha = clouds * mix(0.4, 1.0, sun);
+
+    vec3 color = mix(
+        vec3(0.85),
+        vec3(1.2),
+        clouds
+    );
+
+    color *= lighting;
+
+    gl_FragColor = vec4(color, alpha);
 }
