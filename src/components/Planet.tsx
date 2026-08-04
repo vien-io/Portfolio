@@ -21,7 +21,7 @@ export default function Planet() {
 
   return (
     <>
-      <group ref={group}>
+      <group ref={group} position={[0, 0, 0]}>
         {/* Planet */}
         <mesh ref={mesh} rotation={[0, Math.PI / 2, 0]}>
           <sphereGeometry args={[2, 128, 128]} />
