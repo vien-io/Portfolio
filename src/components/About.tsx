@@ -58,23 +58,23 @@ export default function About() {
             <div className="mt-12 flex items-center gap-4">
               <div className="h-px w-16 bg-blue-400/60" />
 
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">
                 Systems / Interfaces / 3D
               </span>
             </div>
 
             {/* Profile */}
-            <div className="mt-16 max-w-xl border-t border-white/10">
+            <div className="mt-16 max-w-xl border-t border-white/20">
               {profileData.map((item) => (
                 <div
                   key={item.label}
-                  className="group flex items-center justify-between border-b border-white/10 py-4"
+                  className="group flex items-center justify-between border-b border-white/20 py-4"
                 >
-                  <span className="text-[10px] uppercase tracking-[0.25em] text-white/30">
+                  <span className="text-[10px] uppercase tracking-[0.25em] text-white/50">
                     {item.label}
                   </span>
 
-                  <span className="text-xs tracking-[0.15em] text-white/60 transition-colors duration-300 group-hover:text-blue-400">
+                  <span className="text-xs tracking-[0.15em] text-white/70 transition-colors duration-300 group-hover:text-blue-400 pointer-events-auto">
                     {item.value}
                   </span>
                 </div>
@@ -85,20 +85,18 @@ export default function About() {
           {/* Right */}
           <div className="flex flex-col justify-start">
             {/* Description */}
-            <div className="text-base leading-7 text-white/45">
+            <div className="text-base space-y-6 leading-7 text-white/65">
               <p>
                 I'm a full-stack developer who enjoys turning complex problems
                 into simple, dependable software. I care about how things work
                 under the hood just as much as how they feel to use.
               </p>
-              <br />
               <p>
                 I primarily work with React, Laravel, Node.js, and PostgreSQL,
                 building APIs, relational databases, authentication systems, and
                 full-stack applications with a focus on maintainability and
                 clear architecture.
               </p>
-              <br />
               <p>
                 Outside of traditional application development, I explore the
                 creative side of the web through Three.js, React Three Fiber,
@@ -110,14 +108,14 @@ export default function About() {
         </div>
 
         {/* Bottom capabilities */}
-        <div className="mt-24 grid grid-cols-1 border-t border-white/10 md:grid-cols-2">
+        <div className="mt-24 grid grid-cols-1 border-t border-white/10 md:grid-cols-2  pointer-events-auto">
           <div className="group border-b border-white/10 py-8 md:border-b-0 md:border-r md:pr-12">
             <div className="flex items-start justify-between">
-              <p className="text-xs uppercase tracking-[0.25em] text-white/30">
+              <p className="text-xs uppercase tracking-[0.25em] text-white/45 pointer-events-auto">
                 Engineering
               </p>
 
-              <span className="text-blue-400 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+              <span className="text-blue-400 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 pointer-events-auto">
                 ↗
               </span>
             </div>
@@ -129,7 +127,7 @@ export default function About() {
 
           <div className="group py-8 md:pl-12">
             <div className="flex items-start justify-between">
-              <p className="text-xs uppercase tracking-[0.25em] text-white/30">
+              <p className="text-xs uppercase tracking-[0.25em] text-white/45">
                 Exploration
               </p>
 

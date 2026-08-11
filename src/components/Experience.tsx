@@ -55,128 +55,155 @@ export default function Experience() {
       className="relative z-10 px-6 py-32 md:px-12 lg:px-20"
     >
       <div className="mx-auto max-w-7xl">
-        {/* Heading */}
-        <div className="mb-16">
-          <p className="mb-4 text-xs tracking-[0.35em] text-white/40">
-            EXPERIENCE
-          </p>
+        {/* Header */}
+        <div className="mb-20 flex items-end justify-between">
+          <div>
+            <p className="mb-5 text-xs uppercase tracking-[0.35em] text-blue-400">
+              Experience
+            </p>
 
-          <h2 className="text-4xl font-light tracking-tight text-white md:text-6xl">
-            Where I've applied it.
-          </h2>
+            <h2 className="text-4xl font-bold tracking-tight text-white md:text-6xl">
+              Where I've built.
+            </h2>
+          </div>
+
+          <span className="hidden font-mono text-[10px] tracking-[0.25em] text-white/30 md:block">
+            04 / 06
+          </span>
         </div>
 
         {/* Experience list */}
-        <div className="border-t border-white/10">
+        <div className="border-t border-white/15">
           {experiences.map((experience, index) => (
             <article
               key={`${experience.company}-${index}`}
               className="
-    group relative grid gap-8 border-b border-white/10 py-10
-    transition-all duration-500
-    md:grid-cols-[180px_1fr]
-    pointer-events-auto
-  "
+                group relative grid gap-8
+                border-b border-white/15
+                py-12
+                transition-colors duration-500
+                md:grid-cols-[180px_1fr]
+                pointer-events-auto
+              "
             >
-              {/* Hover glow */}
+              {/* Hover background */}
               <div
                 className="
-      pointer-events-none absolute inset-0
-      bg-gradient-to-r from-blue-500/[0.04] via-transparent to-transparent
-      opacity-0 transition-opacity duration-500
-      group-hover:opacity-100
-    "
-              />
-
-              {/* Animated line */}
-              <div
-                className="
-      pointer-events-none absolute left-0 top-0 h-px w-0
-      bg-blue-400
-      transition-all duration-700
-      group-hover:w-full
-    "
+                  pointer-events-none absolute inset-0
+                  -z-10 origin-left scale-x-0
+                  bg-blue-400/[0.035]
+                  transition-transform duration-700
+                  group-hover:scale-x-100
+                "
               />
 
               {/* Date */}
               <div className="relative">
-                <span
-                  className="
-        text-xs tracking-[0.2em] text-white/35
-        transition-colors duration-300
-        group-hover:text-blue-400
-      "
-                >
-                  {experience.year}
-                </span>
+                <div className="flex items-center gap-3">
+                  <span
+                    className="
+                      h-1.5 w-1.5 rounded-full
+                      bg-white/20
+                      transition-all duration-500
+                      group-hover:bg-blue-400
+                      group-hover:shadow-[0_0_10px_rgba(96,165,250,0.8)]
+                    "
+                  />
 
-                {/* Small indicator */}
-                <span
-                  className="
-        absolute -left-3 top-0
-        h-1.5 w-1.5 rounded-full
-        bg-blue-400
-        opacity-0 blur-sm
-        transition-all duration-500
-        group-hover:opacity-100
-      "
-                />
+                  <span
+                    className="
+                      font-mono text-xs tracking-[0.2em] text-white/45
+                      transition-colors duration-300
+                      group-hover:text-blue-400
+                    "
+                  >
+                    {experience.year}
+                  </span>
+                </div>
               </div>
 
               {/* Content */}
-              <div className="relative transition-transform duration-500 group-hover:translate-x-1">
-                <div className="flex flex-col justify-between gap-2 md:flex-row md:items-start">
+              <div className="relative">
+                {/* Top row */}
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div>
                     <h3
                       className="
-            text-2xl font-light tracking-tight text-white
-            transition-colors duration-300
-          "
+                        text-2xl font-medium tracking-tight text-white
+                        transition-transform duration-500
+                        group-hover:translate-x-1
+                      "
                     >
                       {experience.role}
                     </h3>
 
-                    <p className="mt-1 text-sm text-white/40">
+                    <p className="mt-2 text-sm font-medium text-white/50">
                       {experience.company}
                     </p>
                   </div>
 
                   <span
                     className="
-          w-fit rounded-full border border-white/10
-          px-3 py-1 text-xs text-white/40
-          transition-all duration-300
-          group-hover:border-blue-400/30
-          group-hover:bg-blue-400/[0.05]
-          group-hover:text-blue-300
-        "
+                      w-fit rounded-full
+                      border border-white/15
+                      px-3 py-1.5
+                      text-[10px] uppercase tracking-[0.15em]
+                      text-white/45
+                      transition-all duration-300
+                      group-hover:border-blue-400/30
+                      group-hover:bg-blue-400/[0.05]
+                      group-hover:text-blue-300
+                    "
                   >
                     {experience.type}
                   </span>
                 </div>
 
-                <p className="mt-6 max-w-2xl text-sm leading-7 text-white/45">
+                {/* Description */}
+                <p
+                  className="
+                    mt-7 max-w-3xl
+                    text-sm leading-7 text-white/60
+                    transition-colors duration-300
+                    group-hover:text-white/70
+                  "
+                >
                   {experience.description}
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-2">
+                {/* Technologies */}
+                <div className="mt-7 flex flex-wrap gap-2">
                   {experience.technologies.map((technology) => (
                     <span
                       key={technology}
                       className="
-            rounded-full border border-white/10
-            bg-white/[0.03]
-            px-3 py-1.5 text-xs text-white/45
-            transition-all duration-300
-            group-hover:border-white/20
-            group-hover:text-white/60
-          "
+                        rounded-full
+                        border border-white/10
+                        bg-white/[0.025]
+                        px-3 py-1.5
+                        text-xs text-white/50
+                        transition-all duration-300
+                        group-hover:border-white/20
+                        group-hover:text-white/70
+                      "
                     >
                       {technology}
                     </span>
                   ))}
                 </div>
               </div>
+
+              {/* Hover indicator */}
+              <div
+                className="
+                  pointer-events-none absolute
+                  bottom-0 left-0
+                  h-px w-0
+                  bg-blue-400
+                  transition-all duration-700
+                  group-hover:w-full
+                "
+              />
             </article>
           ))}
         </div>
