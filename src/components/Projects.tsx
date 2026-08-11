@@ -8,7 +8,7 @@ const projects = [
     title: "LOTMATCH",
     subtitle: "Property Management & Forecasting System",
     description:
-      "A full-stack property management and forecasting platform managing 1,930+ properties across 37 subdivision blocks, with AI-powered analysis and interactive 3D mapping.",
+      "A full-stack property management and forecasting platform managing 1,930+ properties across 37 subdivision blocks. Built asynchronous AI pipelines for sentiment analysis, EMA forecasting, and GPT-generated summaries, alongside an interactive Three.js property map.",
     technologies: [
       "Laravel",
       "PostgreSQL",
@@ -38,14 +38,8 @@ const projects = [
     title: "PADRELLOS",
     subtitle: "Procurement & Cash-flow Monitoring System",
     description:
-      "An enterprise procurement and financial monitoring platform for purchasing workflows, delivery tracking, approvals, expense management, and operational reporting.",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Laravel",
-      "PostgreSQL",
-      "JWT",
-    ],
+      "Enterprise procurement and cash-flow monitoring platform developed during my practicum. Contributed to database architecture, procurement workflows, financial reporting APIs, RBAC, JWT authentication, expense management, and React frontend architecture.",
+    technologies: ["React", "TypeScript", "Laravel", "PostgreSQL", "JWT"],
     images: [
       "/images/padrellos/pd16.png",
       "/images/padrellos/pd15.png",

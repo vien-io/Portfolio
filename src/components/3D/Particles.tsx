@@ -12,7 +12,7 @@ export const Particles = () => {
 
     for (let i = 0; i < count; i++) {
       array[i * 3] = (Math.random() - 0.5) * 20; // x
-      array[i * 3 + 1] = Math.random() * 50 - 40; // y
+      array[i * 3 + 1] = Math.random() * 70 - 60; // y
       array[i * 3 + 2] = (Math.random() - 0.5) * 12; // z
     }
 
@@ -20,37 +20,35 @@ export const Particles = () => {
   }, []);
 
   const scales = useMemo(() => {
-  const arr = new Float32Array(count);
+    const arr = new Float32Array(count);
 
-  for (let i = 0; i < count; i++) {
-    arr[i] = 2 + Math.random() * 3;
-  }
+    for (let i = 0; i < count; i++) {
+      arr[i] = 2 + Math.random() * 3;
+    }
 
-  return arr;
-}, []);
+    return arr;
+  }, []);
 
-const twinklePhases = useMemo(() => {
-  const arr = new Float32Array(count);
+  const twinklePhases = useMemo(() => {
+    const arr = new Float32Array(count);
 
-  for (let i = 0; i < count; i++) {
-    arr[i] = Math.random() * Math.PI * 2;
-  }
+    for (let i = 0; i < count; i++) {
+      arr[i] = Math.random() * Math.PI * 2;
+    }
 
-  return arr;
-}, []);
+    return arr;
+  }, []);
 
   // Each particle gets its own floating speed
   const speeds = useMemo(
-    () =>
-      Array.from({ length: count }, () => 0.03 + Math.random() * 0.08),
-    []
+    () => Array.from({ length: count }, () => 0.03 + Math.random() * 0.08),
+    [],
   );
 
   // Each particle gets a unique sway phase
   const phases = useMemo(
-    () =>
-      Array.from({ length: count }, () => Math.random() * Math.PI * 2),
-    []
+    () => Array.from({ length: count }, () => Math.random() * Math.PI * 2),
+    [],
   );
 
   // Store original X positions so sway doesn't drift away forever
@@ -101,28 +99,19 @@ const twinklePhases = useMemo(() => {
   return (
     <points ref={points}>
       <bufferGeometry ref={geometry}>
-  <bufferAttribute
-    attach="attributes-position"
-    args={[positions, 3]}
-  />
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
 
-  <bufferAttribute
-    attach="attributes-aScale"
-    args={[scales, 1]}
-  />
+        <bufferAttribute attach="attributes-aScale" args={[scales, 1]} />
 
-  <bufferAttribute
-    attach="attributes-aPhase"
-    args={[twinklePhases, 1]}
-  />
-</bufferGeometry>
+        <bufferAttribute attach="attributes-aPhase" args={[twinklePhases, 1]} />
+      </bufferGeometry>
 
-     <particlesMaterial
-  ref={material}
-  transparent
-  depthWrite={false}
-  blending={THREE.AdditiveBlending}
-/>
+      <particlesMaterial
+        ref={material}
+        transparent
+        depthWrite={false}
+        blending={THREE.AdditiveBlending}
+      />
     </points>
   );
 };
