@@ -5,17 +5,17 @@ import { BsLinkedin } from "react-icons/bs";
 const links = [
   {
     label: "Email",
-    href: "mailto:your@email.com",
+    href: "mailto:vienryomania@gmail.com",
     icon: Mail,
   },
   {
     label: "GitHub",
-    href: "https://github.com/yourusername",
+    href: "https://github.com/vien-io",
     icon: BsGithub,
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/yourusername",
+    href: "https://linkedin.com/in/christopher-vienry-omania-b0380b373",
     icon: BsLinkedin,
   },
 ];
@@ -55,7 +55,7 @@ export default function Contact() {
                     ? undefined
                     : "noopener noreferrer"
                 }
-                className="group flex items-center justify-between border-b border-white/10 py-6 transition-colors duration-300 hover:bg-white/[0.03]"
+                className="group flex items-center justify-between border-b border-white/10 py-6 transition-colors duration-300 hover:bg-white/[0.03] pointer-events-auto"
               >
                 <div className="flex items-center gap-5">
                   <Icon
@@ -78,10 +78,10 @@ export default function Contact() {
 
           {/* Resume */}
           <a
-            href="/resume.pdf"
+            href="/Vien_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex items-center justify-between border-b border-white/10 py-6 transition-colors duration-300 hover:bg-white/[0.03]"
+            className="group flex items-center justify-between border-b border-white/10 py-6 transition-colors duration-300 hover:bg-white/[0.03] pointer-events-auto"
           >
             <div className="flex items-center gap-5">
               <Download

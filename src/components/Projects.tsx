@@ -6,10 +6,17 @@ const projects = [
   {
     number: "01",
     title: "LOTMATCH",
-    subtitle: "Apartment Management System",
+    subtitle: "Property Management & Forecasting System",
     description:
-      "A full-stack apartment management system designed to simplify property, tenant, and rental management.",
-    technologies: ["Laravel", "MySQL", "Tailwind CSS"],
+      "A full-stack property management and forecasting platform managing 1,930+ properties across 37 subdivision blocks, with AI-powered analysis and interactive 3D mapping.",
+    technologies: [
+      "Laravel",
+      "PostgreSQL",
+      "React",
+      "Three.js",
+      "OpenAI",
+      "Docker",
+    ],
     images: [
       "/images/lotmatch/lm2.png",
       "/images/lotmatch/lm4.png",
@@ -22,8 +29,8 @@ const projects = [
       "/images/lotmatch/lm9.jpg",
     ],
     video: "/videos/lotmatch/lm1.mp4",
-    live: undefined,
-    github: undefined,
+    live: "https://lot-match.onrender.com/",
+    github: "https://github.com/vien-io/lot-match-new",
     featured: true,
   },
   {
@@ -31,8 +38,14 @@ const projects = [
     title: "PADRELLOS",
     subtitle: "Procurement & Cash-flow Monitoring System",
     description:
-      "An enterprise procurement and financial monitoring platform built to manage purchasing workflows, delivery tracking, approvals, expenses, and operational reporting.",
-    technologies: ["React", "TypeScript", "PostgreSQL", "Laravel", "JWT"],
+      "An enterprise procurement and financial monitoring platform for purchasing workflows, delivery tracking, approvals, expense management, and operational reporting.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Laravel",
+      "PostgreSQL",
+      "JWT",
+    ],
     images: [
       "/images/padrellos/pd16.png",
       "/images/padrellos/pd15.png",
@@ -54,10 +67,16 @@ const projects = [
   {
     number: "03",
     title: "WINNERS",
-    subtitle: "Attendance Tracking App",
+    subtitle: "Offline-First Attendance Management System",
     description:
-      "An Android application for managing members, attendance sessions, ministries, and church records.",
-    technologies: ["Android", "Jetpack Compose", "Room", "Supabase"],
+      "An offline-first Android application for managing members, attendance sessions, ministries, and church records with background cloud synchronization.",
+    technologies: [
+      "Kotlin",
+      "Jetpack Compose",
+      "Room",
+      "WorkManager",
+      "Supabase",
+    ],
     images: [
       "/projects/winners.png",
       "/projects/winners-2.png",
@@ -240,7 +259,7 @@ function FeaturedProject({ project }: { project: (typeof projects)[number] }) {
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/link flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-xs text-white transition hover:bg-white/10"
+                className="group/link flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-xs text-white transition hover:bg-white/10 pointer-events-auto"
               >
                 Live Demo
                 <ArrowUpRight
@@ -255,7 +274,7 @@ function FeaturedProject({ project }: { project: (typeof projects)[number] }) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/link flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-xs text-white/70 transition hover:bg-white/10 hover:text-white"
+                className="group/link flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-xs text-white/70 transition hover:bg-white/10 hover:text-white pointer-events-auto"
               >
                 <BsGithub size={14} />
                 GitHub
