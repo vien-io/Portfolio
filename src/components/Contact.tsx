@@ -103,7 +103,7 @@ export default function Contact() {
 
         {/* Footer */}
         <div className="mt-12 flex flex-col justify-between gap-4 text-xs text-white/30 md:flex-row">
-          <span>© {new Date().getFullYear()} Christopher Omania</span>
+          <span>© {new Date().getFullYear()} Vienry Omania</span>
 
           <span>Built with React · Three.js · GLSL</span>
         </div>

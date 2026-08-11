@@ -62,7 +62,7 @@ export default function Experience() {
           </p>
 
           <h2 className="text-4xl font-light tracking-tight text-white md:text-6xl">
-            Where I've worked
+            Where I've applied it.
           </h2>
         </div>
 
@@ -71,20 +71,68 @@ export default function Experience() {
           {experiences.map((experience, index) => (
             <article
               key={`${experience.company}-${index}`}
-              className="group grid gap-8 border-b border-white/10 py-10 md:grid-cols-[180px_1fr]"
+              className="
+    group relative grid gap-8 border-b border-white/10 py-10
+    transition-all duration-500
+    md:grid-cols-[180px_1fr]
+    pointer-events-auto
+  "
             >
+              {/* Hover glow */}
+              <div
+                className="
+      pointer-events-none absolute inset-0
+      bg-gradient-to-r from-blue-500/[0.04] via-transparent to-transparent
+      opacity-0 transition-opacity duration-500
+      group-hover:opacity-100
+    "
+              />
+
+              {/* Animated line */}
+              <div
+                className="
+      pointer-events-none absolute left-0 top-0 h-px w-0
+      bg-blue-400
+      transition-all duration-700
+      group-hover:w-full
+    "
+              />
+
               {/* Date */}
-              <div>
-                <span className="text-xs tracking-[0.2em] text-white/35">
+              <div className="relative">
+                <span
+                  className="
+        text-xs tracking-[0.2em] text-white/35
+        transition-colors duration-300
+        group-hover:text-blue-400
+      "
+                >
                   {experience.year}
                 </span>
+
+                {/* Small indicator */}
+                <span
+                  className="
+        absolute -left-3 top-0
+        h-1.5 w-1.5 rounded-full
+        bg-blue-400
+        opacity-0 blur-sm
+        transition-all duration-500
+        group-hover:opacity-100
+      "
+                />
               </div>
 
               {/* Content */}
-              <div>
+              <div className="relative transition-transform duration-500 group-hover:translate-x-1">
                 <div className="flex flex-col justify-between gap-2 md:flex-row md:items-start">
                   <div>
-                    <h3 className="text-2xl font-light tracking-tight text-white">
+                    <h3
+                      className="
+            text-2xl font-light tracking-tight text-white
+            transition-colors duration-300
+          "
+                    >
                       {experience.role}
                     </h3>
 
@@ -93,7 +141,16 @@ export default function Experience() {
                     </p>
                   </div>
 
-                  <span className="w-fit rounded-full border border-white/10 px-3 py-1 text-xs text-white/40">
+                  <span
+                    className="
+          w-fit rounded-full border border-white/10
+          px-3 py-1 text-xs text-white/40
+          transition-all duration-300
+          group-hover:border-blue-400/30
+          group-hover:bg-blue-400/[0.05]
+          group-hover:text-blue-300
+        "
+                  >
                     {experience.type}
                   </span>
                 </div>
@@ -106,7 +163,14 @@ export default function Experience() {
                   {experience.technologies.map((technology) => (
                     <span
                       key={technology}
-                      className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-white/45 transition-colors duration-300 group-hover:border-white/20 group-hover:text-white/60"
+                      className="
+            rounded-full border border-white/10
+            bg-white/[0.03]
+            px-3 py-1.5 text-xs text-white/45
+            transition-all duration-300
+            group-hover:border-white/20
+            group-hover:text-white/60
+          "
                     >
                       {technology}
                     </span>
