@@ -1,4 +1,8 @@
-export default function Navbar() {
+interface NavbarProps {
+  isHidden?: boolean;
+}
+
+export default function Navbar({ isHidden = false }: NavbarProps) {
   const links = [
     "About",
     "Projects",
@@ -8,7 +12,13 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-6 z-50">
+     <header
+      className={`fixed inset-x-0 top-6 z-50 transition-all duration-300 ${
+        isHidden
+          ? "pointer-events-none -translate-y-8 opacity-0"
+          : "translate-y-0 opacity-100"
+      }`}
+    >
       <div className="mx-auto flex max-w-[1700px] items-center justify-between px-8">
         {/* Floating Navbar */}
         <div className="flex w-full items-center justify-between rounded-full border border-white/10 bg-black/20 px-8 py-4 backdrop-blur-xl shadow-[0_0_40px_rgba(255,255,255,0.03)]">

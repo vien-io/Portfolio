@@ -20,13 +20,14 @@ export default function Hero() {
               </h1>
 
               <h2 className="mt-6 text-2xl md:text-3xl text-gray-300">
-                Backend Developer
+                Junior Full-Stack Developer
               </h2>
 
               <p className="mt-6 text-gray-400 leading-8">
-                I build scalable web applications with Laravel, Node.js, and
-                PostgreSQL, while crafting immersive 3D web experiences using
-                React Three Fiber and GLSL.
+                I build scalable web applications with React, Laravel, Node.js,
+                and PostgreSQL, with experience in APIs, database architecture,
+                and production-ready systems. I also create interactive 3D
+                experiences using Three.js and React Three Fiber.
               </p>
             </div>
 
@@ -36,7 +37,8 @@ export default function Hero() {
             {/* Right - Buttons */}
             <div className="flex flex-col items-end gap-5">
               {/* Projects */}
-              <button
+              <a
+                href="#projects"
                 className="
       group
       pointer-events-auto
@@ -50,7 +52,7 @@ export default function Hero() {
       px-8 py-7
       text-left
       shadow-[0_0_40px_rgba(59,130,246,0.08)]
-      transition-all duration-23
+      transition-all duration-200
       hover:-translate-y-1
       hover:border-blue-400/50
       hover:bg-blue-500/10
@@ -65,7 +67,7 @@ export default function Hero() {
         opacity-0
         blur-2xl
         transition
-        duration-23
+        duration-200
         group-hover:opacity-100
       "
                 />
@@ -76,7 +78,7 @@ export default function Hero() {
                       Portfolio
                     </span>
 
-                    <span className="text-blue-400 transition-transform duration-23 group-hover:translate-x-1">
+                    <span className="text-blue-400 transition-transform duration-200 group-hover:translate-x-1">
                       →
                     </span>
                   </div>
@@ -87,10 +89,11 @@ export default function Hero() {
                     Explore my work and case studies.
                   </p>
                 </div>
-              </button>
+              </a>
 
               {/* Contact */}
-              <button
+              <a
+                href="#contact"
                 className="
       group
       pointer-events-auto
@@ -103,7 +106,7 @@ export default function Hero() {
       backdrop-blur-xl
       px-8 py-7
       text-left
-      transition-all duration-23
+      transition-all duration-200
       hover:-translate-y-1
       hover:border-white/30
       hover:bg-white/5
@@ -117,7 +120,7 @@ export default function Hero() {
         opacity-0
         blur-2xl
         transition
-        duration-23
+        duration-200
         group-hover:opacity-100
       "
                 />
@@ -139,7 +142,7 @@ export default function Hero() {
                     Available for freelance and full-time roles.
                   </p>
                 </div>
-              </button>
+              </a>
 
               {/* Social Links */}
               <div className="pointer-events-auto mr-7 mt-8 flex items-center justify-end gap-5">
@@ -172,7 +175,7 @@ export default function Hero() {
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 z-20 -translate-x-1/2 pointer-events-none">
         <div className="flex flex-col items-center gap-2 text-gray-400">
-          <span className="text-2xl">↓</span>
+          <span className="animate-bounce text-2xl">↓</span>
           <span className="text-xs uppercase tracking-[0.3em]">Scroll</span>
         </div>
       </div>
