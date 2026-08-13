@@ -12,7 +12,7 @@ export default function App() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   return (
-    <main className="relative bg-zinc-950 text-white">
+    <main className="relative overflow-x-hidden bg-zinc-950 text-white">
       {/* Fixed 3D background */}
       <div className="fixed inset-0 z-0">
         <HeroScene />

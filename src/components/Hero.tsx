@@ -4,16 +4,19 @@ import { MdEmail } from "react-icons/md";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative h-screen overflow-hidden">
-      {/* Hero Content */}
-      <div className="absolute inset-0 z-10 pointer-events-none flex items-center">
-        <div className="mx-auto max-w-[1700px] w-full px-8">
-          <div className="grid grid-cols-3 items-center">
-            {/* Left - Content */}
-            <div className="max-w-xl">
-              <p className="text-blue-400 font-medium mb-4">Hello, I'm</p>
+    <section
+      id="hero"
+      className="relative min-h-[100dvh] overflow-x-hidden md:h-screen md:overflow-hidden"
+    >
+      <div className="absolute inset-0 z-10 flex pointer-events-none items-start pt-28 pb-24 md:items-center md:pt-0 md:pb-0">
+        <div className="mx-auto w-full max-w-[1700px] px-5 md:px-8">
+          <div className="flex flex-col gap-10 md:grid md:grid-cols-3 md:items-center md:gap-0">
+            <div className="max-w-xl md:max-w-xl">
+              <p className="mb-3 text-sm font-medium text-blue-400 md:mb-4">
+                Hello, I'm
+              </p>
 
-              <h1 className="text-6xl md:text-8xl font-black leading-none">
+              <h1 className="text-5xl font-black leading-none sm:text-6xl md:text-8xl">
                 Vienry
                 <br />
                 Omania
@@ -24,41 +27,41 @@ export default function Hero() {
               </h2>
 
               <p className="mt-6 text-gray-400 leading-8">
-                I build scalable web applications with React, Laravel, Node.js,
-                and PostgreSQL, with experience in APIs, database architecture,
-                and production-ready systems. I also create interactive 3D
-                experiences using Three.js and React Three Fiber.
+                I build web applications, APIs, and data-driven systems with
+                React, Laravel, Node.js, and PostgreSQL, with experience in
+                authentication, database design, and production-ready systems. I
+                also create interactive 3D experiences using Three.js and React
+                Three Fiber.
               </p>
             </div>
 
-            {/* Center - Empty (Earth is behind) */}
-            <div />
+            <div className="hidden md:block" />
 
-            {/* Right - Buttons */}
-            <div className="flex flex-col items-end gap-5">
-              {/* Projects */}
+            <div className="flex w-full flex-col gap-4 md:w-auto md:items-end md:gap-5">
               <a
                 href="#projects"
                 className="
       group
       pointer-events-auto
       relative
-      w-96
+      w-full
       overflow-hidden
       rounded-3xl
       border border-blue-400/20
       bg-black/20
       backdrop-blur-xl
-      px-8 py-7
+      px-6 py-6
       text-left
       shadow-[0_0_40px_rgba(59,130,246,0.08)]
       transition-all duration-200
       hover:-translate-y-1
       hover:border-blue-400/50
       hover:bg-blue-500/10
+      md:w-96
+      md:px-8
+      md:py-7
     "
               >
-                {/* glow */}
                 <div
                   className="
         absolute
@@ -83,7 +86,9 @@ export default function Hero() {
                     </span>
                   </div>
 
-                  <div className="mt-3 text-3xl font-bold">View Projects</div>
+                  <div className="mt-3 text-2xl font-bold md:text-3xl">
+                    View Projects
+                  </div>
 
                   <p className="mt-3 text-sm leading-6 text-gray-400">
                     Explore my work and case studies.
@@ -91,25 +96,27 @@ export default function Hero() {
                 </div>
               </a>
 
-              {/* Contact */}
               <a
                 href="#contact"
                 className="
       group
       pointer-events-auto
       relative
-      w-96
+      w-full
       overflow-hidden
       rounded-3xl
       border border-white/10
       bg-black/20
       backdrop-blur-xl
-      px-8 py-7
+      px-6 py-6
       text-left
       transition-all duration-200
       hover:-translate-y-1
       hover:border-white/30
       hover:bg-white/5
+      md:w-96
+      md:px-8
+      md:py-7
     "
               >
                 <div
@@ -136,7 +143,9 @@ export default function Hero() {
                     </span>
                   </div>
 
-                  <div className="mt-3 text-3xl font-bold">Contact Me</div>
+                  <div className="mt-3 text-2xl font-bold md:text-3xl">
+                    Contact Me
+                  </div>
 
                   <p className="mt-3 text-sm leading-6 text-gray-400">
                     Available for freelance and full-time roles.
@@ -144,10 +153,10 @@ export default function Hero() {
                 </div>
               </a>
 
-              {/* Social Links */}
-              <div className="pointer-events-auto mr-7 mt-8 flex items-center justify-end gap-5">
+              <div className="pointer-events-auto mt-2 flex items-center gap-5 md:mr-7 md:mt-8 md:justify-end">
                 <a
                   href="https://github.com/vien-io"
+                  aria-label="GitHub profile"
                   className="text-gray-400 transition hover:text-white"
                 >
                   <BsGithub size={26} />
@@ -155,6 +164,7 @@ export default function Hero() {
 
                 <a
                   href="https://linkedin.com/in/christopher-vienry-omania-b0380b373"
+                  aria-label="LinkedIn profile"
                   className="text-gray-400 transition hover:text-white"
                 >
                   <LiaLinkedin size={29} />
@@ -162,6 +172,7 @@ export default function Hero() {
 
                 <a
                   href="mailto:vienryomania@gmail.com"
+                  aria-label="Send email"
                   className="text-gray-400 transition hover:text-white"
                 >
                   <MdEmail size={26} />
@@ -172,8 +183,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 z-20 -translate-x-1/2 pointer-events-none">
+      <div className="pointer-events-none absolute bottom-8 left-1/2 z-20 -translate-x-1/2 md:bottom-10">
         <div className="flex flex-col items-center gap-2 text-gray-400">
           <span className="animate-bounce text-2xl">↓</span>
           <span className="text-xs uppercase tracking-[0.3em]">Scroll</span>
