@@ -1,75 +1,126 @@
-# React + TypeScript + Vite
+# Vienry Omania — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site for **Vienry Omania**, a junior full-stack developer focused on backend systems, APIs, and database-driven applications—with interactive 3D visuals built using React Three Fiber and custom GLSL shaders.
 
-Currently, two official plugins are available:
+Repository: [github.com/vien-io/Portfolio](https://github.com/vien-io/Portfolio)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Overview
 
-## React Compiler
+Single-page portfolio showcasing selected work, technical skills, and experience. The site combines a content-focused layout (projects, skills, experience, contact) with a fixed WebGL hero background featuring a procedurally shaded planet, particle field, nebula, and scroll-driven camera movement.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **Hero** — Name, role, intro, project/contact CTAs, and social links over a live 3D scene
+- **About** — Background, focus areas, and engineering vs. graphics split
+- **Projects** — Featured LOTMATCH case study with video demo, image gallery, live link, and GitHub; additional project cards with modal galleries
+- **Skills** — Grouped technology list (Backend, Database, Frontend, Graphics, Mobile, DevOps)
+- **Experience** — Timeline of practicum, thesis, and personal project work
+- **Contact** — Email, GitHub, LinkedIn, and downloadable CV
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 3D / WebGL
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Custom GLSL materials for planet surface, clouds, atmosphere, particles, and nebula
+- Scroll-linked camera rig with pointer parallax
+- Instanced floating rocks, shooting stars, and GLTF spaceship model
+- Shaders loaded via `vite-plugin-glsl`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Layer | Technologies |
+|---|---|
+| UI | React 19, TypeScript, Tailwind CSS 4 |
+| 3D | Three.js, React Three Fiber, `@react-three/drei` |
+| Shaders | GLSL (`.vert` / `.frag` via Vite plugin) |
+| Tooling | Vite 8, ESLint, TypeScript |
+
+## Project Structure
 
 ```
+src/
+├── components/
+│   ├── 3D/           # R3F scene objects (Planet, Particles, CameraRig, etc.)
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── Experience.tsx
+│   ├── Hero.tsx
+│   ├── HeroScene.tsx
+│   ├── Navbar.tsx
+│   ├── Projects.tsx
+│   ├── Skills.tsx
+│   └── Typewriter.tsx
+├── materials/        # Extended shader materials (Planet, Clouds, Atmosphere, Particles)
+├── shaders/          # GLSL source files
+├── types/            # R3F custom element typings
+├── App.tsx
+├── main.tsx
+└── index.css
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+public/
+├── fonts/            # Custom display fonts
+├── images/           # Project screenshots
+├── models/           # GLTF assets
+├── videos/           # Project demo videos
+└── Vien_CV.pdf       # Resume
 ```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Install
+
+```bash
+git clone https://github.com/vien-io/Portfolio.git
+cd Portfolio
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+Open the URL shown in the terminal (typically `http://localhost:5173`).
+
+### Production Build
+
+```bash
+npm run build
+npm run preview
+```
+
+Build output is written to `dist/`.
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Deployment
+
+The app is a static Vite build. Deploy the `dist/` folder to any static host (e.g. Vercel, Netlify, GitHub Pages, Cloudflare Pages).
+
+Ensure `public/` assets (images, videos, models, CV) are included in the deployment.
+
+## Featured Projects (external)
+
+| Project | Description | Links |
+|---|---|---|
+| **LOTMATCH** | Property management & forecasting platform (1,930+ properties) | [Live demo](https://lot-match.onrender.com/) · [GitHub](https://github.com/vien-io/lot-match-new) |
+| **PADRELLOS** | Enterprise procurement & cash-flow monitoring (practicum) | Screenshots in portfolio |
+| **WINNERS** | Offline-first Android attendance app | Screenshots in portfolio |
+
+## Contact
+
+- **Email:** [vienryomania@gmail.com](mailto:vienryomania@gmail.com)
+- **GitHub:** [@vien-io](https://github.com/vien-io)
+- **LinkedIn:** [Christopher Vienry Omania](https://linkedin.com/in/christopher-vienry-omania-b0380b373)
+
+## License
+
+This project is for personal portfolio use. Project screenshots, demos, and assets belong to their respective owners unless otherwise stated.

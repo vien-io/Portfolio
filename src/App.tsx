@@ -20,14 +20,12 @@ export default function App() {
 
       {/* UI */}
       <div className="relative z-10 pointer-events-none">
-         <Navbar isHidden={isGalleryOpen} />
+        <Navbar isHidden={isGalleryOpen} />
         <Hero />
-        <About />
-        <Projects 
-        // isGalleryOpen = {isGalleryOpen}
-        onGalleryOpen={setIsGalleryOpen} />
+        <Projects onGalleryOpen={setIsGalleryOpen} />
         <Skills />
         <Experience />
+        <About />
         <Contact />
       </div>
     </main>
