@@ -47,8 +47,7 @@ export default function Contact() {
             <h2 className="max-w-5xl text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl lg:text-8xl">
               Let's build
               <br />
-              something{" "}
-              <span className="text-blue-400">together.</span>
+              something <span className="text-blue-400">together.</span>
             </h2>
 
             <div className="mt-12 flex items-center gap-4">
@@ -75,8 +74,8 @@ export default function Contact() {
               </div>
 
               <p className="mt-5 max-w-xs text-sm leading-7 text-white/50">
-                Interested in building reliable systems, thoughtful
-                interfaces, and interactive experiences.
+                Interested in building reliable systems, thoughtful interfaces,
+                and interactive experiences.
               </p>
             </div>
           </div>
@@ -170,7 +169,7 @@ export default function Contact() {
           <span>© {new Date().getFullYear()} Vienry Omania</span>
 
           <span className="font-mono tracking-wide">
-            React · Three.js · GLSL
+            React · Laravel · Node.js · PostgreSQL
           </span>
         </div>
       </div>

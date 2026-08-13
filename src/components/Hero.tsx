@@ -8,8 +8,12 @@ export default function Hero() {
       id="hero"
       className="relative min-h-[100dvh] overflow-x-hidden md:h-screen md:overflow-hidden"
     >
+      
       <div className="absolute inset-0 z-10 flex pointer-events-none items-start pt-28 pb-24 md:items-center md:pt-0 md:pb-0">
         <div className="mx-auto w-full max-w-[1700px] px-5 md:px-8">
+          <span className="ml-auto hidden font-mono text-[10px] tracking-[0.25em] text-right text-white/30 md:block">
+  01 / 06
+</span>
           <div className="flex flex-col gap-10 md:grid md:grid-cols-3 md:items-center md:gap-0">
             <div className="max-w-xl md:max-w-xl">
               <p className="mb-3 text-sm font-medium text-blue-400 md:mb-4">
@@ -97,7 +101,9 @@ export default function Hero() {
               </a>
 
               <a
-                href="#contact"
+                href="/Vien_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
       group
       pointer-events-auto
@@ -135,7 +141,7 @@ export default function Hero() {
                 <div className="relative">
                   <div className="flex items-center justify-between">
                     <span className="text-xs uppercase tracking-[0.35em] text-gray-400">
-                      Let's Talk
+                      My Resume
                     </span>
 
                     <span className="text-gray-400 transition-transform duration-300 group-hover:translate-x-1">
@@ -144,11 +150,11 @@ export default function Hero() {
                   </div>
 
                   <div className="mt-3 text-2xl font-bold md:text-3xl">
-                    Contact Me
+                    View Resume
                   </div>
 
                   <p className="mt-3 text-sm leading-6 text-gray-400">
-                    Available for freelance and full-time roles.
+                    Experience, skills, projects, and education.
                   </p>
                 </div>
               </a>

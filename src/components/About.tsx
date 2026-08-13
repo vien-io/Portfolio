@@ -29,7 +29,7 @@ export default function About() {
           </p>
 
           <p className="font-mono text-[10px] tracking-[0.25em] text-white/20">
-            01 / 03
+            05 / 06
           </p>
         </div>
 

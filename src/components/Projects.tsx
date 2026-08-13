@@ -8,7 +8,7 @@ const projects = [
     title: "LOTMATCH",
     subtitle: "Property Management & Forecasting System",
     description:
-      "A full-stack property management and forecasting platform managing 1,930+ properties across 37 subdivision blocks. Built asynchronous AI pipelines for sentiment analysis, EMA forecasting, and GPT-generated summaries, alongside an interactive Three.js property map.",
+      "A full-stack property management and forecasting platform built with Laravel and PostgreSQL, managing 1,930+ properties across 37 subdivision blocks. Implemented asynchronous AI pipelines for sentiment analysis, EMA forecasting, and GPT-generated summaries, with an interactive Three.js property map for spatial visualization.",
     technologies: [
       "Laravel",
       "PostgreSQL",
@@ -39,7 +39,7 @@ const projects = [
     title: "PADRELLOS",
     subtitle: "Procurement & Cash-flow Monitoring System",
     description:
-      "Enterprise procurement and cash-flow monitoring platform developed during my practicum. Contributed to database architecture, procurement workflows, financial reporting APIs, RBAC, JWT authentication, expense management, and React frontend architecture.",
+      "Led the development of an enterprise web application for property and document management, designing the database architecture and REST API layer and implementing JWT authentication, role-based access control, and core frontend and backend features. Built with React, Node.js, Express, PostgreSQL, and Drizzle ORM.",
     technologies: ["React", "TypeScript", "Laravel", "PostgreSQL", "JWT"],
     images: [
       "/images/padrellos/pd16.png",
@@ -61,6 +61,7 @@ const projects = [
     ],
     live: undefined,
     github: undefined,
+    status: "PRIVATE · ENTERPRISE PROJECT",
     previewFit: "cover",
   },
   {
@@ -68,7 +69,7 @@ const projects = [
     title: "WINNERS",
     subtitle: "Offline-First Attendance Management System",
     description:
-      "An offline-first Android application for managing members, attendance sessions, ministries, and church records with background cloud synchronization.",
+      "An offline-first Android attendance management system built with Jetpack Compose and Room, with Supabase synchronization. Designed around local persistence and sync states to support attendance tracking even without a network connection, with UUID-based records and insert/update/delete synchronization.",
     technologies: [
       "Kotlin",
       "Jetpack Compose",
@@ -86,7 +87,7 @@ const projects = [
       "/images/winners/win1.jpg",
     ],
     live: undefined,
-    github: undefined,
+    github: "https://github.com/vien-io/Winners-App",
     previewFit: "contain",
   },
 ];
@@ -103,14 +104,20 @@ export default function Projects({ onGalleryOpen }: ProjectsProps) {
     >
       <div className="mx-auto max-w-7xl">
         {/* Section heading */}
-        <div className="mb-20">
-          <p className="mb-4 text-xs tracking-[0.35em] text-white/40">
-            SELECTED WORK
-          </p>
+        <div className="mb-20 flex items-end justify-between">
+          <div>
+            <p className="mb-4 text-xs tracking-[0.35em] text-white/40">
+              SELECTED WORK
+            </p>
 
-          <h2 className="text-4xl font-light tracking-tight text-white md:text-6xl">
-            Projects
-          </h2>
+            <h2 className="text-4xl font-light tracking-tight text-white md:text-6xl">
+              Projects
+            </h2>
+          </div>
+
+          <span className="hidden font-mono text-[10px] tracking-[0.25em] text-white/30 md:block">
+            02 / 06
+          </span>
         </div>
 
         {/* Featured project */}
@@ -239,7 +246,7 @@ function FeaturedProject({ project }: { project: (typeof projects)[number] }) {
               {project.title}
             </h3>
 
-            <p className="mt-5 max-w-xl text-sm leading-7 text-white/50">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-white/60">
               {project.description}
             </p>
 
@@ -365,7 +372,7 @@ function ProjectCard({
             {project.title}
           </h3>
 
-          <p className="mt-4 text-sm leading-6 text-white/45">
+          <p className="mt-4 text-sm leading-6 text-white/60">
             {project.description}
           </p>
 
@@ -381,15 +388,15 @@ function ProjectCard({
             ))}
           </div>
 
-          {/* Links */}
-          <div className="mt-7 flex gap-3">
+          {/* Links / Project status */}
+          <div className="mt-7 flex items-center gap-3">
             {project.live && (
               <a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-2 text-xs text-white transition hover:text-white/60"
+                className="flex items-center gap-2 text-xs text-white transition hover:text-white/60 pointer-events-auto"
               >
                 Live
                 <ArrowUpRight size={14} />
@@ -402,11 +409,18 @@ function ProjectCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-2 text-xs text-white/60 transition hover:text-white"
+                className="flex items-center gap-2 text-xs text-white/60 transition hover:text-white pointer-events-auto"
               >
                 <BsGithub size={14} />
                 GitHub
               </a>
+            )}
+
+            {project.status && (
+              <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[10px] tracking-[0.15em] text-white/40">
+                <span className="h-1.5 w-1.5 rounded-full bg-white/40" />
+                {project.status}
+              </div>
             )}
           </div>
         </div>
