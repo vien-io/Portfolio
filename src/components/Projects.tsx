@@ -31,6 +31,7 @@ const projects = [
     video: "/videos/lotmatch/lm1.mp4",
     live: "https://lot-match.onrender.com/",
     github: "https://github.com/vien-io/lot-match-new",
+    previewFit: "cover",
     featured: true,
   },
   {
@@ -43,11 +44,14 @@ const projects = [
     images: [
       "/images/padrellos/pd16.png",
       "/images/padrellos/pd15.png",
+      "/images/padrellos/pd14.png",
       "/images/padrellos/pd13.png",
+      "/images/padrellos/pd12.png",
       "/images/padrellos/pd11.png",
       "/images/padrellos/pd10.png",
       "/images/padrellos/pd9.png",
       "/images/padrellos/pd8.png",
+      "/images/padrellos/pd7.png",
       "/images/padrellos/pd6.png",
       "/images/padrellos/pd5.png",
       "/images/padrellos/pd4.png",
@@ -57,6 +61,7 @@ const projects = [
     ],
     live: undefined,
     github: undefined,
+    previewFit: "cover",
   },
   {
     number: "03",
@@ -72,12 +77,17 @@ const projects = [
       "Supabase",
     ],
     images: [
-      "/projects/winners.png",
-      "/projects/winners-2.png",
-      "/projects/winners-3.png",
+      "/images/winners/win5.jpg",
+      "/images/winners/win4.jpg",
+      "/images/winners/win2.jpg",
+      "/images/winners/win6.jpg",
+      "/images/winners/win7.jpg",
+      "/images/winners/win3.jpg",
+      "/images/winners/win1.jpg",
     ],
     live: undefined,
     github: undefined,
+    previewFit: "contain",
   },
 ];
 
@@ -326,7 +336,11 @@ function ProjectCard({
           <img
             src={project.images[0]}
             alt={`${project.title} screenshot`}
-            className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-[1.04] group-hover:opacity-100"
+            className={`h-full w-full opacity-80 transition duration-700 group-hover:scale-[1.04] group-hover:opacity-100 ${
+              project.previewFit === "contain"
+                ? "object-contain"
+                : "object-cover opacity-80 group-hover:opacity-100"
+            }`}
           />
 
           {/* Gradient */}
