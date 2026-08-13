@@ -1,28 +1,9 @@
-import { Canvas } from "@react-three/fiber";
-import { CameraRig } from "./3D/CameraRig";
-import { Particles } from "./3D/Particles";
-import Planet from "./3D/Planet";
-import { ShootingStars } from "./3D/ShootingStars";
-import Nebula from "./3D/Nebula";
-import { FloatingRocks } from "./3D/FloatingRocks";
-import Spaceship from "./3D/Spaceship";
+import { useIsMobileScene } from "../hooks/useIsMobileScene";
+import { DesktopHeroScene } from "./DesktopHeroScene";
+import { MobileHeroScene } from "./MobileHeroScene";
 
 export const HeroScene = () => {
-  return (
-    <div className="absolute inset-0">
-      <Canvas>
-        <CameraRig />
-        
-        <ambientLight intensity={0.08} />
-        <directionalLight position={[5, 3, 8]} intensity={1.5} />
+  const isMobile = useIsMobileScene();
 
-        <Nebula />
-        <Particles />
-        <Planet />
-        <ShootingStars />
-        <FloatingRocks />
-        <Spaceship />
-      </Canvas>
-    </div>
-  );
+  return isMobile ? <MobileHeroScene /> : <DesktopHeroScene />;
 };

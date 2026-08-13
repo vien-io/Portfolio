@@ -4,10 +4,10 @@ interface NavbarProps {
 
 export default function Navbar({ isHidden = false }: NavbarProps) {
   const links = [
-    "About",
     "Projects",
     "Skills",
     "Experience",
+    "About",
     "Contact",
   ];
 
